@@ -28,6 +28,8 @@ exports.up = async function(knex) {
     .inTable("animals")
     table.date("from_date").notNull().defaultTo(knex.raw("current_timestamp"))
     table.date("to_date")
+
+    table.primary(["zoo_id", "animal_id"])
   })
 }
 
